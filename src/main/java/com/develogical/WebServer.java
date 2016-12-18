@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class WebServer {
-
+    @SuppressWarnings("WeakerAccess")
     public WebServer() throws Exception {
         Server server = new Server(8080);
 
