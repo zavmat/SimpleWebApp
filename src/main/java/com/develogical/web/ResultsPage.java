@@ -3,7 +3,6 @@ package com.develogical.web;
 import java.io.PrintWriter;
 
 public class ResultsPage extends HtmlPage {
-
     private final String query;
     private final String answer;
 

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public abstract class HtmlPage {
-
     public void writeTo(HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
         PrintWriter writer = resp.getWriter();
@@ -26,5 +25,4 @@ public abstract class HtmlPage {
     }
 
     protected abstract void writeContentTo(PrintWriter writer);
-
 }
