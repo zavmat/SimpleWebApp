@@ -13,7 +13,6 @@ public class ResultsPage extends HtmlPage {
 
     @Override
     protected void writeContentTo(PrintWriter writer) {
-
         if (answer == null || answer.isEmpty()) {
             writer.println("<h1>Sorry</h1>");
             writer.print("<p>Sorry, we didn't understand <em>" + query + "</em></p>");
