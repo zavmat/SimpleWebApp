@@ -1,5 +1,11 @@
-apply plugin: 'java'
-apply plugin: "jacoco"
+plugins {
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'java'
+    id 'jacoco'
+    id 'application'
+}
+
+mainClassName = "com.develogical.WebServer"
 
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -19,19 +25,13 @@ task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
 
 jacoco {
-    toolVersion = "0.7.6.201602180812"
+    toolVersion = "0.8.2"
+    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 jacocoTestReport {
     reports {
         xml.enabled false
         csv.enabled false
-        html.destination "${buildDir}/jacocoHtml"
-    }
-}
-test {
-    jacoco {
-        append = false
-        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-        classDumpFile = file("$buildDir/jacoco/classpathdumps")
+        html.destination file("${buildDir}/jacocoHtml")
     }
 }
