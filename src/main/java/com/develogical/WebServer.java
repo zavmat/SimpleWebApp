@@ -12,11 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 public class WebServer {
     @SuppressWarnings("WeakerAccess")
-    public WebServer() throws Exception {
-        Server server = new Server(8080);
+    public WebServer(int port) throws Exception {
+        Server server = new Server(port);
 
         ServletHandler handler = new ServletHandler();
         handler.addServletWithMapping(new ServletHolder(new Website()), "/*");
@@ -47,7 +48,10 @@ public class WebServer {
     }
 
     public static void main(String[] args) throws Exception {
-        new WebServer();
+        int port = Optional.ofNullable(System.getenv("PORT"))
+                .map(Integer::parseInt)
+                .orElse(8080);
+        new WebServer(port);
     }
 }
 
