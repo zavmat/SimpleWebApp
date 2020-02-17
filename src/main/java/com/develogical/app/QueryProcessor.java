@@ -7,6 +7,11 @@ public class QueryProcessor {
                     "English poet, playwright, and actor, widely regarded as the greatest " +
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
+        if (query.toLowerCase().contains("blake")) {
+            return "William Blake was an English poet, painter, and printmaker." +
+                    "Largely unrecognised during his lifetime, Blake is now considered" +
+                    "a seminal figure in the history of the poetry and visual arts of the Romantic Age.";
+        }
         return "";
     }
 }
