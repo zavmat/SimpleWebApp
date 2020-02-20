@@ -8,10 +8,10 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
 
         }
-        if (query.toLowerCase().contains("blake")) {
-            return "William Blake was an English poet, painter, and printmaker." +
-                    "Largely unrecognised during his lifetime, Blake is now considered" +
-                    "a seminal figure in the history of the poetry and visual arts of the Romantic Age.";
+        if (query.toLowerCase().contains("byron")) {
+            return "George Gordon Byron, 6th Baron Byron, FRS, known simply as Lord Byron, was an English poet, peer," +
+                    "and politician who became a revolutionary in the Greek War of Independence, and is considered one" +
+                    "of the leading figures of the Romantic movement.";
         }
         return "";
     }
