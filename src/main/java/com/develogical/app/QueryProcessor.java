@@ -8,7 +8,7 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
 
         }
-        if (query.toLowerCase().contains("byron")) {
+        if (query.toLowerCase().contains("lord")) {
             return "George Gordon Byron, 6th Baron Byron, FRS, known simply as Lord Byron, was an English poet, peer," +
                     "and politician who became a revolutionary in the Greek War of Independence, and is considered one" +
                     "of the leading figures of the Romantic movement.";
